@@ -21,7 +21,7 @@ async def last_fm_pic_(message: Message):
     res = await AioHttp.get_json(
         f"{base_url}?method=user.getrecenttracks&limit=3&extended=1&user={Config.LASTFM_USERNAME}&api_key={Config.LASTFM_API_KEY}&format=json"
     )
-    if not res[0] == 200:
+    if res[0] != 200:
         return await message.edit(
             "Hmm... something went wrong.\nPlease ensure that you've set the correct username!"
         )
