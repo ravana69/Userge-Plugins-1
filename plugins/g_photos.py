@@ -112,7 +112,7 @@ async def check_creds(message):
     "gpupload",
     about={
         "header": "upload files to gphoto",
-        "usage": "{tr}gphoto upload [link | path | reply to media]",
+        "usage": "{tr}gpupload [link | path | reply to media]",
         "examples": [
             "{tr}gpupload downloads/img.jpg",
             "{tr}gpupload https://imgur.com/download/Inyeb1S",
