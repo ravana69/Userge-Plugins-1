@@ -8,12 +8,13 @@ from userge.utils import progress
 
 
 @userge.on_cmd(
-    "web ?(.+?|) (anonfiles|transfer|filebin|anonymousfiles"
+    "web ?(.+?|) (ninja|anonfiles|transfer|filebin|anonymousfiles"
     "|megaupload|bayfiles|vshare|0x0|fileio)",
     about={
         "header": "upload files to web",
         "usage": "{tr}web [site name]",
         "types": [
+            "ninja",
             "anonfiles",
             "transfer",
             "filebin",
@@ -43,6 +44,7 @@ async def web(message: Message):
             await message.err("Process Canceled!")
             return
     hosts = {
+        "ninja": 'curl -i -F "file=@{}" https://tmp.ninja/api.php?d=upload',
         "anonfiles": 'curl -F "file=@{}" https://anonfiles.com/api/upload',
         "transfer": 'curl --upload-file "{}" https://transfer.sh/'
         + os.path.basename(file_name),
