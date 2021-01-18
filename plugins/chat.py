@@ -132,7 +132,6 @@ async def invite_link(message: Message):
     },
     allow_via_bot=False,
     allow_private=False,
-    only_admins=False,
 )
 async def tagall_(message: Message):
     """ Tag recent members """
@@ -167,7 +166,6 @@ async def tagall_(message: Message):
     },
     allow_private=False,
     allow_via_bot=False,
-    only_admins=False,
 )
 async def stagall_(message: Message):
     """ tag recent members without spam """
