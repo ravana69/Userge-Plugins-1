@@ -308,7 +308,7 @@ async def del_pfp(message: Message):
         "note": "<code>● Use revert after clone to get original profile</code>\n"
         "<code>● Don't use @ while giving username</code>",
     },
-    allow_via_bot=False,
+    allow_via_bot=True,
 )
 async def clone_(message: Message):
     """ Clone first name, last name, bio and profile picture """
